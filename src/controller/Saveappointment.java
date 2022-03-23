@@ -41,10 +41,10 @@ public class Saveappointment extends HttpServlet {
 		
 		String vehicle_number = request.getParameter("id");
 		
-		Appointment ap= new Appointment();
-		ap.setVehicleNumber(vehicle_number);
+		Appointment appointment= new Appointment();
+		appointment.setVehicleNumber(vehicle_number);
 		
-		int status = AppointmentDao.save(ap);
+		int status = AppointmentDao.save(appointment);
 		if (status > 0) {
 			 HttpSession session = request.getSession();
 		      	session.setAttribute("vehicle_number", vehicle_number);
